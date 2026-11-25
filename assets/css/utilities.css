@@ -1,0 +1,323 @@
+/* ===================================================
+   UTILITIES & COMMON COMPONENTS
+   Modern Luxury Glassmorphism & High-Tech System
+=================================================== */
+
+.container {
+    width: min(92%, var(--container-width));
+    margin-inline: auto;
+}
+
+.section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 55px;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    background: var(--primary-subtle);
+    padding: 6px 16px;
+    border-radius: var(--radius-round);
+    border: 1px solid rgba(0, 161, 224, 0.22);
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-heading);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.section-description {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 auto;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 28px;
+    border-radius: var(--radius-round);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00A1E0, #0176D3);
+    color: #ffffff !important;
+    box-shadow: 0 8px 24px -6px rgba(0, 161, 224, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #38BDF8, #00A1E0);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -8px rgba(0, 161, 224, 0.65);
+    color: #ffffff !important;
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+    background: rgba(0, 161, 224, 0.12);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.5);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px -6px rgba(16, 185, 129, 0.65);
+}
+
+/* ===================================
+   PILLS & STATUS BADGES
+=================================== */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: var(--success-color);
+    padding: 7px 16px;
+    border-radius: var(--radius-round);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success-color);
+    box-shadow: 0 0 10px var(--success-color);
+    animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.5;
+    }
+}
+
+/* ===================================
+   MODAL COMPONENT (RESUME & DETAILS)
+=================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 2500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-dialog-custom {
+    background: var(--surface-color);
+    color: var(--text-color);
+    width: 100%;
+    max-width: 900px;
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px) scale(0.97);
+    transition: transform var(--transition-fast);
+}
+
+.modal-overlay.active .modal-dialog-custom {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header-custom {
+    padding: 18px 24px;
+    background: var(--surface-color-alt);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.modal-header-custom h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-close-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 1rem;
+}
+
+.modal-close-btn:hover {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+    transform: rotate(90deg);
+}
+
+.modal-body-custom {
+    padding: 28px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Resume Paper Style */
+.resume-paper {
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-color);
+}
+
+.resume-header-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 2px solid rgba(0, 161, 224, 0.3);
+    padding-bottom: 22px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.resume-header-top h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin: 0 0 4px;
+    color: var(--secondary-color);
+}
+
+.resume-header-top h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.resume-contact-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: var(--text-color);
+}
+
+.resume-section-block {
+    margin-bottom: 26px;
+}
+
+.resume-section-block h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.resume-skill-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary-subtle);
+    border: 1px solid rgba(0, 161, 224, 0.2);
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--primary-color);
+    margin: 0 4px 6px 0;
+    font-weight: 500;
+}

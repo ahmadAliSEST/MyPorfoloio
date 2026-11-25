@@ -1,0 +1,302 @@
+/* ===================================================
+   RESPONSIVE DESIGN SYSTEM
+=================================================== */
+
+/* ===========================
+   Large Devices (≤ 1200px)
+=========================== */
+@media (max-width: 1200px) {
+    .hero-content {
+        gap: 40px;
+    }
+
+    .hero-card-frame {
+        height: 480px;
+    }
+
+    .hero-metrics-bento {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ===========================
+   Tablets (≤ 991px)
+=========================== */
+@media (max-width: 991px) {
+    .nav-actions .btn-primary {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--surface-color);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 40px;
+        gap: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-15px);
+        transition: all var(--transition-fast);
+        z-index: 999;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 8px 0;
+        width: 100%;
+        display: block;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 130px;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-social-wrap {
+        justify-content: center;
+    }
+
+    .hero-metrics-bento {
+        text-align: left;
+        max-width: 600px;
+        margin-inline: auto;
+        margin-bottom: 30px;
+    }
+
+    .floating-badge {
+        display: none; /* Hide floating badges on smaller screens to avoid overflow */
+    }
+
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-console {
+        order: 2;
+    }
+
+    .about-narrative {
+        order: 1;
+    }
+
+    .about-narrative .section-title {
+        text-align: center;
+    }
+
+    .about-actions {
+        justify-content: center;
+    }
+
+    /* Credentials Grid */
+    .credentials-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* ===========================
+   Mobile Devices (≤ 768px)
+=========================== */
+@media (max-width: 768px) {
+    .navbar {
+        height: 75px;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    .logo-badge {
+        width: 36px;
+        height: 36px;
+        font-size: 1.05rem;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .hero-role {
+        min-height: 55px;
+        font-size: 1.25rem;
+        justify-content: center;
+    }
+
+    .hero-card-frame {
+        height: 380px;
+    }
+
+    .hero-metrics-bento {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    /* Timeline */
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 48px;
+        margin-bottom: 35px;
+    }
+
+    .timeline-dot {
+        left: 4px;
+        width: 22px;
+        height: 22px;
+        border-width: 3px;
+        top: 22px;
+    }
+
+    .timeline-card {
+        padding: 24px 20px;
+    }
+
+    .timeline-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .timeline-company {
+        font-size: 0.95rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-filter {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.82rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
+
+/* ===========================
+   Small Mobile (≤ 576px)
+=========================== */
+@media (max-width: 576px) {
+    .container {
+        width: 92%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-metrics-bento {
+        grid-template-columns: 1fr;
+    }
+
+    .about-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card {
+        padding: 24px 18px;
+    }
+
+    .modal-dialog-custom {
+        max-height: 95vh;
+    }
+
+    .modal-body-custom {
+        padding: 16px;
+    }
+
+    .resume-paper {
+        padding: 18px;
+    }
+
+    .resume-header-top h1 {
+        font-size: 1.5rem;
+    }
+}

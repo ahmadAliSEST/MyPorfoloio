@@ -1,0 +1,142 @@
+/* ===================================================
+   SERVICES SECTION
+   Salesforce Engineering Offerings & Architecture
+=================================================== */
+
+.services {
+    background: var(--background-color);
+    position: relative;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 38px 32px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(14px);
+    transition: all var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-cyan));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-glow);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: var(--primary-subtle);
+    border: 1px solid rgba(0, 161, 224, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.55rem;
+    margin-bottom: 24px;
+    transition: all var(--transition-fast);
+}
+
+.service-card:hover .service-icon-box {
+    transform: scale(1.08) rotate(-4deg);
+    background: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 10px 20px -5px rgba(0, 161, 224, 0.5);
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 14px;
+    line-height: 1.3;
+}
+
+.service-card p {
+    color: var(--text-color);
+    font-size: 0.94rem;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.service-features li {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-features li i {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.service-footer {
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color);
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.service-link i {
+    color: var(--primary-color);
+    transition: transform var(--transition-fast);
+}
+
+.service-link:hover {
+    color: var(--primary-color);
+}
+
+.service-link:hover i {
+    transform: translateX(4px);
+}
